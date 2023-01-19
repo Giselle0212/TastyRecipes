@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/add.css')}}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
+    <title>Tasty Recipes</title>
+</head>
+
+<body>
+    <style>
+        h1{
+            font-family: 'Damion', cursive;
+        }
+        </style>
+        <!-- NavBar -->
+        <nav class="navbar__container navbar d-flex ">
+            <div class=" d-flex">
+                <div>
+                <h1 class="tittle">Tasty Recipe</h1>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div>
+                    <a class="btn " href="/post">Posts</a>
+                </div>
+                <div>
+                    <a class="btn" href="/logout">Log out</a>
+                </div>
+            </div>
+        </nav>
+        <div class="main d-flex">
+            <form action="/new/recipes" method="post">
+                <div class="container1">
+                    <h2 style="text-align: center;">Add Recipe</h2>
+                    <label style="font-size: 20px;" for="image">Image:</label>
+                    <input type="url" placeholder='Image' id="image" name="image">
+                    {%for message in get_flashed_messages(category_filter = ['error_recipe_image'] ) %}
+                    <p class="alert">
+                        {{message}}
+                    </p>
+                    {%endfor%}
+                    <label style="font-size: 20px;" for="name">Name:</label>
+                    <input type="text" placeholder='Name' id="name" name="name">
+                    {%for message in get_flashed_messages(category_filter = ['error_recipe_name'] ) %}
+                    <p class="alert">
+                        {{message}}
+                    </p>
+                    {%endfor%}
+                    <label style="font-size: 20px;" for="ingredient">Ingredient:</label>
+                    <textarea type="text" placeholder='Enter Ingredients' id="ingredient" name="ingredient"></textarea>
+                    {%for message in get_flashed_messages(category_filter = ['error_recipe_ingredient'] ) %}
+                    <p class="alert">
+                        {{message}}
+                    </p>
+                    {%endfor%}
+                    <label style="font-size: 20px;" for="description">Description:</label>
+                    <textarea type="text" placeholder='Enter Description' id="description" name="description"></textarea>
+                    {%for message in get_flashed_messages(category_filter = ['error_recipe_description'] ) %}
+                    <p class="alert">
+                        {{message}}
+                    </p>
+                    {%endfor%}
+                    <div class="d-flex justify-content-around text-center align-items-center">
+                        <div>
+                            <label style="font-size: 20px;" for="cook_time">Cook time:</label>
+                            <input type="number" placeholder='Hours' id="cook_time" name="cook_time" style="width: 80px;" min="1" max="5">
+                            {%for message in get_flashed_messages(category_filter = ['error_recipe_cook_time'] ) %}
+                            <p class="alert">
+                                {{message}}
+                            </p>
+                            {%endfor%}
+                        </div>
+                        <div>
+                            <label style="font-size: 20px; text-align: center;" for="difficulty">Difficulty:</label>
+                            <div class="d-flex " style="gap: 20px;">
+                                <div>
+                                    Easy: <input type="radio" name="difficulty" value="1" checked>
+                                </div>
+                                <div>
+                                    Medium:<input type="radio" name="difficulty" value="0">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="registerbtn">Add Recipe</button>
+                </div>
+            </form>
+        </div>
+</body>
+</html>

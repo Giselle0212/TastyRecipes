@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(251, 251, 251);
+}
+
+.main{
+    justify-content: center;
+    align-items: center;
+}
+.navbar{
+    background-color: rgb(255, 196, 204);
+    height: 80px;
+    width: 100%;
+}
+.btn{
+    background-color: lightpink;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+}
+.icon_img{
+    max-width: 100px;
+    height: 100px;
+    float: none;
+}
+
+/* BODY*/
+.container1{
+    width: 530px;
+    padding: 16px;
+    margin: 80px 40px;
+    border: 1px solid rgba(0, 0, 0, 0.245);
+    border-radius: 5%;
+    background-color: rgb(252, 205, 211);
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input{
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 22px 0;
+    display: flex;
+    border: none;
+    background: #f1f1f1;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 7px;
+    
+}
+textarea{
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 22px 0;
+    display: flex;
+    border: none;
+    background: #f1f1f1;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 7px;
+}
+
+.registerbtn {
+    background-color: lightpink;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    border-radius: 5px;
+}
+    .registerbtn:hover {
+    opacity:1;
+    background-color: rgba(255, 254, 251, 0.402);
+    color:black;
+}

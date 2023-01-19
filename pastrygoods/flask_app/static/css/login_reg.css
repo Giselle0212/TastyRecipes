@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #dfd9c5;
+
+}
+.main{
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    text-align: center;
+    font-family: 'Courier New', cursive;
+}
+p{
+    text-align: center;
+}
+.container1{
+padding: 16px;
+margin: 20px 40px;
+border: 1px solid rgba(0, 0, 0, 0.245);
+border-radius: 3%;
+background-color: rgb(252, 205, 211);
+align-items: center;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+input[type=text], input[type=password] {
+width: 100%;
+padding: 15px;
+margin: 5px 0 22px 0;
+display: flex;
+border: none;
+background: #f1f1f1;
+font-family: 'Courier New', Courier, monospace;
+}
+
+.registerbtn {
+background-color: lightpink;
+color: white;
+padding: 16px 20px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 100%;
+opacity: 0.9;
+}
+
+.registerbtn:hover {
+opacity:1;
+background-color: rgba(255, 254, 251, 0.402);
+color:black;
+}
+
+.alert{
+    background-color: rgb(235, 149, 149);
+    color: rgb(142, 51, 51);
+}
+/* @media only screen and (max-width: 600px) {
+    .text {font-size: 11px}
+} */

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/add.css')}}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
+    <title>Tasty Recipes</title>
+</head>
+
+<body>
+    <style>
+        h1{
+            font-family: 'Damion', cursive;
+        }
+        </style>
+    <!-- NavBar -->
+    <nav class="navbar__container navbar d-flex ">
+        <div class=" d-flex">
+            <div>
+                <h1 class="tittle">Tasty Recipe</h1>
+                
+            </div>
+        </div>
+        <div class="d-flex">
+            <div>
+                <a class="btn " href="/post">Posts</a>
+            </div>
+            <div>
+                <a class="btn" href="/logout">Log out</a>
+            </div>
+        </div>
+    </nav>
+    <div class="main d-flex">
+        <div class="container1 align-items-center">
+            {%for current_recipe in current_recipe %}
+            <h2 class="text-center">{{current_recipe.name}}</h2>
+                <img src={{current_recipe.image}} style="width: 497px; height:220px; border-radius: 15px;" alt="recipe_img">
+                <div class="text-center m-3">
+                    <div>
+                        <h4>Ingredient:</h4>
+                        <p>{{current_recipe.ingredient}}</p>
+                    </div>
+                    <div>
+                        <h4>Description:</h4>
+                        <p>{{current_recipe.description}}</p>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                        <div>
+                            <h4>Cook Time</h4>
+                            <p>{{current_recipe.cook_time}} Hours.</p>
+                        </div>
+                        <div>
+                            <h4>Difficulty</h4>
+                            <p>{% if current_recipe.difficulty == 1:%}
+                                Easy.
+                                {%else: %}
+                                Medium.
+                                {%endif%}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {%endfor%}
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Courier New', cursive;
+    /* background-position: 2m 1.5cm; */
+}
+/*  NAVBAR */
+.navbar{
+    background: rgb(255, 196, 204);
+    height: 80px;
+    width: 100%;
+}
+
+.btn{
+    background-color: lightpink;
+    margin: 10px;
+}
+
+
+input{
+    width: 400px;
+    height: 40px;
+}
+
+.font_FAV{
+    color: lightpink;
+}
+
+.center{
+    text-align: center;
+    align-items: center;
+}
+
+.margin{
+    margin: 30px;
+}
+/* IMG ANIMATION */
+ 
+.search_Icon{
+    width: 40px;
+    border: none;
+    background-color: rgba(219, 215, 215, 0.799);
+    border-radius: 20%;
+    /* width: 100rem; */
+}
+/* @keyframes fade {
+    from {opacity: .8} 
+    to {opacity: 1}
+} */
+/* On smaller screens, decrease text size */
+/* @media only screen and (max-width: 300px) {
+    .text {font-size: 11px}
+} */
+/* .fade {
+    animation-name: fade;
+    animation-duration: 20.5s;
+} */
+/* .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+} */
+
+/* .lol{
+    min-height: 400px;
+} */

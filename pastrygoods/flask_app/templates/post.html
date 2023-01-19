@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compati 30%=" IE=edge">
+    <meta name="viewp 30%=" width=100%%ce-width,100%%tial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/post.css')}}">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Damion&family=Lora:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <title>Tasty Recipes</title>
+</head>
+
+<body>
+    <style>
+    h1{
+        font-family: 'Damion', cursive;
+    }
+    h2{
+        font-family: 'Damion', cursive;
+        font-family: 'Lora', serif;
+        font-size: 50px;
+
+    }
+    </style>
+    <nav class="navbar d-flex ">
+        <div class=" d-flex">
+            <div>
+                <h1 class="tittle">Tasty Recipe</h1>
+                <!-- <img class='icon_img' src="static/img/TastyRecipes.com__2_-removebg-preview.png" alt="icon_img"> -->
+            </div>
+        </div>
+        <div class="d-flex">
+            <div>
+                <a class="btn " href="/create/recipe">Add Recipe</a>
+            </div>
+            <div>
+                <a class="btn" href="/logout">Log out</a>
+            </div>
+        </div>
+    </nav>
+    <!-- img carousel -->
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <!-- image 1 -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="static/img/alex-lvrs-On2VseHUDXw-unsplash.jpg" class="d-block w-100" style="height:600px;"
+                    alt="image1">
+            </div>
+        <!-- image 2 -->
+            <div class="carousel-item">
+                <img src="static/img/didi-miam-diVU8-tGO0U-unsplash.jpg" class="d-block w-100" style="height:600px;"
+                    alt="image2">
+            </div>
+        <!-- image 3 -->
+            <div class="carousel-item">
+                <img src="static/img/heather-barnes-_TN1m5R1pFI-unsplash.jpg" class="d-block w-100"
+                    style="height:600px;" alt="image3">
+            </div>
+        <!-- image 4 -->
+            <div class="carousel-item">
+                <img src="static/img/patryk-sikora-x920-HZaelg-unsplash.jpg" class="d-block w-100" style="height:600px;"
+                    alt="image4">
+            </div>
+        <!-- image 5 -->
+            <div class="carousel-item">
+                <img src="static/img/stories-ys8qztLjJyg-unsplash.jpg" style="height:600px;" class="d-block w-100"
+                    alt="image5">
+            </div>
+        </div>
+    </div>
+        <div>
+            <div class="center">
+                <h2 style="text-align: center; margin-top: 30px;">Find your <span style="color:lightpink; "> Favorite</span> Recipes here!!</h2>
+                <!-- <input type="text" placeholder="Enter an ingredient"> -->
+                <!-- <img class="search_Icon " src="static/img/" alt="search icon">  -->
+                <!-- <h3 class="margin">Your search results:</h3> -->
+                <h2 class="m-3" style="text-align: center;font-family: 'Courier New', Courier, monospace;"> Posts</h2>
+            </div>
+            <!-- 4 LOOP -->
+            <div class="card-deck d-flex justify-content-center">
+                {%for one_recipe in list_recipes%}
+                <section class="blog">
+                    <div class="icons">
+                        <div class="card">
+                            <img src={{one_recipe.image}} style="width: 260px; height:220px; border-radius: 15px; "
+                                alt="recipe_img">
+                            <h3 style="margin-top: 15px; font-size: 25px; font-family: Arial, Helvetica, sans-serif;">{{one_recipe.name}}</h3>
+                            <a href="/view/{{one_recipe.id}}" class="popUpbtn">Get Recipe</a>
+                        </div>
+                </section>
+                {%endfor%}
+            </div>
+        </div>
+    </div>
+    <script>
+        const button = document.getElementById("btn");
+const nav = document.getElementById("navbar");
+
+button.addEventListener('click', () => {
+  nav.classList.toggle('show');
+});
+    </script>
+</body>
+
+</html>
